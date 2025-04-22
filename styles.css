@@ -1,0 +1,215 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    background-color: #F8F7F2; /* Hueso */
+    color: #414535; /* Negro Oliva */
+}
+
+/* Contenedor general */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Header */
+.header {
+    background-color: #618985; /* Verde Oliva */
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centra la imagen dentro del óvalo */
+    background-color: #414535; /* Fondo igual a los botones (Negro Oliva) */
+    border-radius: 50px; /* Forma de óvalo largo */
+    width: 200px; /* Ancho para óvalo largo */
+    height: 60px; /* Alto para óvalo largo */
+    overflow: hidden; /* Evita que la imagen se desborde */
+}
+
+.logo-img {
+    width: 80%; /* Logo más pequeño */
+    height: 80%; /* Logo más pequeño */
+    object-fit: contain; /* Mantiene las proporciones de la imagen */
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-link {
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500; /* Medium */
+    font-size: 16px;
+    line-height: 22px;
+    padding: 10px 15px;
+    border-radius: 25px;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+}
+
+.nav-link.primary {
+    background-color: #414535; /* Negro Oliva */
+    color: #F8F8F8; /* Blanco grisáceo */
+}
+
+.nav-link.primary:hover {
+    background-color: #C19875; /* León */
+}
+
+.nav-link.primary:active {
+    background-color: #96B8BB; /* Gris Ceniza */
+}
+
+.nav-link.primary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.login-icon {
+    margin-right: 8px;
+}
+
+.language-button {
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500; /* Medium */
+    font-size: 16px;
+    line-height: 22px;
+    padding: 10px 15px;
+    border-radius: 25px;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    background-color: #414535; /* Negro Oliva */
+    color: #F8F8F8; /* Blanco grisáceo */
+}
+
+.language-button:hover {
+    background-color: #C19875; /* León */
+}
+
+.language-button:active {
+    background-color: #96B8BB; /* Gris Ceniza */
+}
+
+.language-icon {
+    margin-left: 8px;
+}
+
+/* Hero Banner */
+.hero {
+    position: relative;
+    background-image: url('assets/hero-background.jpg'); /* Ruta ajustada */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 70px; /* Espacio para el header fijo */
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Superposición más oscura */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+.hero-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700; /* Más grueso (Bold) */
+    font-size: 80px;
+    line-height: 90px;
+    color: #C19875; /* León */
+    text-transform: uppercase;
+    max-width: 50%;
+}
+
+.hero-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrado horizontal */
+    max-width: 40%;
+}
+
+.hero-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 36px; /* Letras muy grandes */
+    line-height: 44px; /* Ajustado para el nuevo tamaño */
+    color: #FFFFFF; /* Blanco */
+    margin-bottom: 30px;
+    text-align: center; /* Centrado */
+}
+
+.hero-button {
+    display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500; /* Medium */
+    font-size: 18px;
+    line-height: 30px;
+    padding: 15px 30px;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.hero-button.primary {
+    background-color: #414535; /* Negro Oliva */
+    color: #F8F8F8; /* Blanco grisáceo */
+}
+
+.hero-button.primary:hover {
+    background-color: #C19875; /* León */
+}
+
+.hero-button.primary:active {
+    background-color: #96B8BB; /* Gris Ceniza */
+}
+
+.hero-button.primary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
