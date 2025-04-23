@@ -126,7 +126,7 @@ body {
 /* Hero Banner */
 .hero {
     position: relative;
-    background-image: url('assets/hero-background.jpg'); /* Ruta ajustada */
+    background-image: url('../img/hero-background.jpg');
     background-size: cover;
     background-position: center;
     height: 100vh;
