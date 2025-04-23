@@ -80,7 +80,9 @@ body {
 }
 
 .nav-link.primary:hover {
-    background-color: #C19875; /* León */
+    background-color: #F8F8F8; /* León */
+    color: #4D6443;
+
 }
 
 .nav-link.primary:active {
@@ -112,11 +114,12 @@ body {
 }
 
 .language-button:hover {
-    background-color: #C19875; /* León */
+    background-color: #F8F8F8; /* León */
+    color: #4D6443;
 }
 
 .language-button:active {
-    background-color: #96B8BB; /* Gris Ceniza */
+    background-color: #F8F8F8; /* Gris Ceniza */
 }
 
 .language-icon {
@@ -202,7 +205,9 @@ body {
 }
 
 .hero-button.primary:hover {
-    background-color: #C19875; /* León */
+    background-color: #F8F8F8 ;
+    color: #4D6443;
+
 }
 
 .hero-button.primary:active {
