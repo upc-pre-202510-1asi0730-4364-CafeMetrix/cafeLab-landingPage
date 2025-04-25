@@ -188,3 +188,149 @@ body {
     text-decoration: none;
     border-radius: 25px;
 }
+
+/* Espacio para sección 2 */
+.section-placeholder {
+    background-color: #F8F7F2;
+    padding: 80px 0;
+    border: 2px dashed #C19875;
+    margin: 40px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 500px;
+}
+
+.section-placeholder h2 {
+    font-size: 24px;
+    color: #C19875;
+    text-align: center;
+}
+
+/*Sección 3*/
+.data-section {
+    background-color: #C68F61;
+    padding: 80px 0;
+    color: #414535;
+}
+
+.data-section .container {
+    display: block; 
+}
+
+/*Texto: Datos que respaldan tus decisiones*/
+.data-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400; /* Regular */
+    font-size: 64px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+/*Texto: Desde la curva hasta el inventario, Café Lab documenta cada paso.*/
+.data-subtitle {
+    font-family: 'Arial', sans-serif;
+    font-weight: 400; 
+    font-size: 32px;
+    line-height: 1.4;
+    margin-bottom: 80px;
+    color: #414535;
+}
+
+.data-features {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+
+.feature-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+}
+
+.feature-row.reverse {
+    flex-direction: row-reverse;
+}
+
+.feature-content {
+    flex: 1;
+    max-width: 500px;
+}
+
+.feature-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700; 
+    font-size: 54px;
+    margin-bottom: 20px;
+    color: #414535;
+}
+
+.feature-description {
+    font-family: 'Arial', sans-serif;
+    font-weight: 400; 
+    font-size: 32px;
+    line-height: 1.6;
+    color: #414535;
+}
+
+.feature-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.device-mockup {
+    background: #ffffff;
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%;
+    max-width: 480px;
+    position: relative;
+    border: 5px solid #000000;
+}
+
+.device-mockup img {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+}
+
+.mockup-placeholder {
+    background: #f5f5f5;
+    border-radius: 16px;
+    height: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    font-size: 18px;
+}
+
+/* Media queries para responsividad */
+@media (max-width: 768px) {
+    .feature-row,
+    .feature-row.reverse {
+        flex-direction: column;
+    }
+
+    .data-title {
+        font-size: 36px;
+    }
+
+    .data-subtitle {
+        font-size: 20px;
+    }
+
+    .feature-title {
+        font-size: 28px;
+    }
+
+    .feature-description {
+        font-size: 18px;
+    }
+}
