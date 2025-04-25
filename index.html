@@ -26,7 +26,7 @@
                 <nav class="nav">
                     <a href="#beneficios" class="nav-link primary">Beneficios</a>
                     <a href="#planes" class="nav-link primary">Planes</a>
-                    <a href="#contactos" class="nav-link primary">Contactos</a>
+                    <a href="#faq-contacto" class="nav-link primary">Contactos</a>
                     <a href="#iniciar-sesion" class="nav-link primary login">
                         <svg class="login-icon icon-person" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
@@ -136,6 +136,49 @@
             </div>
         </div>
     </section>
+
+    <!-- Sección 6: FAQ y Contacto -->
+    <section id="faq-contacto" class="faq-contact-section">
+        <div class="faq-contact-wrapper">
+            <!-- Sección de Preguntas Frecuentes -->
+            <div class="faq">
+                <h2 class="faq-title">Preguntas Frecuentes (FAQ)</h2>
+                <div class="faq-item">
+                    <p class="question">¿Puedo usar Cafelab si solo soy barista y no tengo cafetería?</p>
+                    <p class="answer">¡Claro! Cafelab se adapta tanto a baristas individuales como a cafeterías completas.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="question">¿Qué diferencia hay entre los planes?</p>
+                    <p class="answer">Los planes difieren en cantidad de usuarios, acceso a funciones avanzadas y módulos de análisis.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="question">¿La app está disponible para móvil?</p>
+                    <p class="answer">Sí, Cafelab funciona perfectamente desde navegador móvil. La app nativa está en desarrollo.</p>
+                </div>
+                <a href="#" class="ver-mas">Ver más...</a>
+            </div>
+
+            <!-- Sección de Formulario de Contacto -->
+            <div class="contact">
+                <h2 class="contact-title">Contáctanos</h2>
+                <form action="#" method="POST">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                
+                    <label for="apellidos">Apellidos</label>
+                    <input type="text" id="apellidos" name="apellidos" required>
+                
+                    <label for="email">Correo electrónico</label>
+                    <input type="email" id="email" name="email" required>
+                
+                    <label for="mensaje">Mensaje</label>
+                    <textarea id="mensaje" name="mensaje" rows="3" required></textarea>
+                
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </section>
 </body>
-</html>      
+</html>
 
