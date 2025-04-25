@@ -378,26 +378,180 @@ body {
   font-size: 18px;
 }
 
-/* Media queries para responsividad */
+/* ======= SECCIÓN 6 - FAQ Y CONTACTO ======= */
+.faq-contact-section {
+    background-color: #F2E3BC;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.faq-contact-wrapper {
+    background-color: #C19875;
+    width: 1103px;
+    height: 640px;
+    border-radius: 20px;
+    display: flex;
+    gap: 2rem;
+    padding: 3rem;
+    color: #4D4949;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+}
+
+.faq {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Cambiado de space-between a flex-start */
+}
+
+.faq-title, .contact-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 36px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.faq-item {
+    margin-bottom: 0.8rem; /* Reducido de 1rem */
+}
+
+.question {
+    font-family: 'Arial', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.answer {
+    margin: 0.3rem 0 1rem 0;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.ver-mas {
+    color: #4D4949;
+    text-decoration: underline;
+    display: inline-block;
+    margin-top: 0.5rem; /* Reducido de 1rem */
+}
+
+.contact {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact form {
+    background-color: #fff;
+    padding: 1rem; /* Reducido de 1.5rem */
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem; /* Reducido de 1rem */
+    color: #000;
+}
+
+.contact input, .contact textarea {
+    padding: 0.6rem; /* Reducido de 0.8rem */
+    font-size: 0.9rem; /* Reducido de 1rem */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.contact textarea {
+    resize: vertical;
+}
+
+.contact button {
+    background-color: #2C2C2C;
+    color: white;
+    padding: 0.8rem; /* Reducido de 1rem */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.contact button:hover {
+    opacity: 0.9;
+}
+
+/* ======= MEDIA QUERIES ======= */
+@media (max-width: 1200px) {
+    .faq-contact-wrapper {
+        width: 95%;
+        height: auto;
+        flex-direction: column;
+        padding: 2rem;
+    }
+
+    .faq, .contact {
+        width: 100%;
+    }
+}
+
 @media (max-width: 768px) {
-  .feature-row,
-  .feature-row.reverse {
-      flex-direction: column;
-  }
+    .feature-row,
+    .feature-row.reverse {
+        flex-direction: column;
+    }
 
-  .data-title {
-      font-size: 36px;
-  }
+    .data-title {
+        font-size: 36px;
+    }
 
-  .data-subtitle {
-      font-size: 20px;
-  }
+    .data-subtitle {
+        font-size: 20px;
+    }
 
-  .feature-title {
-      font-size: 28px;
-  }
+    .feature-title {
+        font-size: 28px;
+    }
 
-  .feature-description {
-      font-size: 18px;
-  }
+    .feature-description {
+        font-size: 18px;
+    }
+    
+    .faq-contact-wrapper {
+        padding: 2rem;
+    }
+
+    .faq {
+        flex: 1 1 100%;
+    }
+
+    .contact form {
+        padding: 1rem;
+    }
+
+    .contact input, .contact textarea {
+        padding: 0.6rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .faq-contact-section {
+        padding: 1rem;
+    }
+
+    .faq-contact-wrapper {
+        padding: 1.5rem;
+    }
+
+    .faq-title, .contact-title {
+        font-size: 28px;
+    }
+
+    .question {
+        font-size: 20px;
+    }
+
+    .answer {
+        font-size: 14px;
+    }
 }
