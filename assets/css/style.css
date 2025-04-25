@@ -200,15 +200,15 @@ body {
     text-align: center;
   }
   .beneficios__title {
-    font-size: 2.25rem;
+    font-size: 3.5rem;
     font-weight: 600;
     color: #414535;
-    margin-bottom: 50px;
+    margin-bottom: 100px;
   }
   .underline {
     text-decoration: underline;
     text-decoration-color: #414535;
-    text-decoration-thickness: 3px;
+    text-decoration-thickness: 5px;
   }
   .beneficios__grid {
     display: flex;
@@ -222,20 +222,20 @@ body {
     min-width: 280px;
   }
   .beneficio-card__heading {
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 600;
-    margin-bottom: 10px;
+    margin-bottom: 16px;
   }
   .beneficio-card__text {
-    font-size: 1rem;
+    font-size: 1.5rem;
     line-height: 1.3;    
-    max-width: 280px;   
-    margin: 0 auto 20px; 
+    max-width: 400px;   
+    margin: 0 auto 50px; 
   }
   .beneficio-card__cta {
-    font-size: 2.5rem;
+    font-size: 4rem;
     font-style: italic;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
     line-height: 1.1;
   }
   .beneficio-card__cta .highlight {
@@ -251,17 +251,16 @@ body {
   }
   .cta-rest {
     display: block;
-    font-size: 2.5rem; 
+    font-size: 4rem; 
     font-style: italic;
     line-height: 1.1;
   }
 
-  /* ======= BOTONES SECCIÓN BENEFICIOS ======= */
   .btn-beneficios {
     display: inline-block;
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
-    font-size: 1rem;
+    font-size: 1.2rem;
     line-height: 1.5;
     padding: 12px 28px;
     border-radius: 25px;
