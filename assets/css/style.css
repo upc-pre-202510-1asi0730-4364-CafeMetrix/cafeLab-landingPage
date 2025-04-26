@@ -802,4 +802,41 @@ body {
     padding: 20px 10px;
     line-height: 1.4;
   }
-  
+    /* Estilos para el footer */
+.footer {
+  background-color: #414535;
+  color: #F8F8F8;
+  padding: 40px 0;
+}
+
+.footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.footer-content {
+  display: flex;
+  gap: 40px;
+}
+
+.footer-section h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.footer-section ul {
+  list-style-type: none;
+}
+
+.footer-section ul li a {
+  color: #F8F8F8;
+  text-decoration: none;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.footer-section ul li a:hover {
+  color: #C19875;
+}
