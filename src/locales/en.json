@@ -1,0 +1,110 @@
+{
+  "nav": {
+    "benefits": "Benefits",
+    "plans": "Plans",
+    "contacts": "Contacts",
+    "login": "Login"
+  },
+  "language": "EN",
+  "hero": {
+    "title": "TOTAL CONTROL OVER YOUR COFFEE.",
+    "subtitle": "Discover what Café Lab has to offer you",
+    "register": "I want to register"
+  },
+  "benefits": {
+    "title": "Focus on <span class='underline'>clear benefits</span>.",
+    "baristaTitle": "I'm a barista",
+    "baristaText": "Document your recipes, elevate your technique, and build a unique sensory profile that defines your style as a professional.",
+    "baristaCta": "Perfect your craft.",
+    "baristaBtn": "See tools for baristas",
+    "ownerTitle": "I own a coffee shop",
+    "ownerText": "Optimize your inventory, ensure product traceability, and professionalize every aspect of your coffee operation.",
+    "ownerCta": "Boost your business.",
+    "ownerBtn": "See solutions for businesses"
+  },
+  "data": {
+    "title": "Data that backs your decisions.",
+    "subtitle": "From the curve to the inventory, Café Lab documents every step.",
+    "dashboardTitle": "Inventory dashboard",
+    "dashboardDesc": "Real-time batch tracking, bean stock, and movement control.",
+    "curveTitle": "Roast curves",
+    "curveDesc": "Precise control of roast development to maximize the sensory qualities of each origin."
+  },
+  "plans": {
+    "title": "Scale your coffee with tools tailored to you.",
+    "barista": {
+      "title": "Barista Plan",
+      "price": "$/. 9",
+      "features": "Includes cupping sessions, defect library, roast-flavor correlation, grind calibration, and recipes.",
+      "button": "Start Barista Plan"
+    },
+    "owner": {
+      "title": "Owner/Admin Plan",
+      "price": "$/. 9",
+      "features": "Includes supplier management, inventory, coffee lots, cost control, and roasting profiles.",
+      "button": "Start Owner/Admin Plan"
+    },
+    "full": {
+      "title": "Full Plan",
+      "price": "$/. 15",
+      "features": "Includes all features of Barista and Owner/Admin.",
+      "button": "Start Full Plan"
+    },
+    "footer": "All our plans include technical documentation, personalized support, and intuitive visualizations for baristas and coffee shops."
+  },
+  "testimonials": {
+    "title": "This is what Café Lab users say.",
+    "martin": {
+      "name": "Martin Gutierrez - Coffee shop owner",
+      "text": "Thanks to CafeLab I was able to optimize my processes through intuitive documentation, which improved my planning."
+    },
+    "ana": {
+      "name": "Ana Rivera - Barista in Lima",
+      "text": "CafeLab helped me standardize my roasts and reduce errors. Now everyone in the coffee shop uses the same recipe."
+    },
+    "rosa": {
+      "name": "Rosa Dominguez",
+      "stars": "⭐⭐⭐⭐⭐",
+      "text": "Useful, easy to use"
+    },
+    "miguel": {
+      "name": "Miguel Diaz",
+      "stars": "⭐⭐⭐⭐⭐",
+      "text": "Profitable"
+    }
+  },
+  "faq": {
+    "title": "Frequently Asked Questions (FAQ)",
+    "q1": "Can I use Cafelab if I'm just a barista and don't own a coffee shop?",
+    "a1": "Of course! Cafelab adapts to both individual baristas and full coffee shops.",
+    "q2": "What's the difference between the plans?",
+    "a2": "The plans differ in the number of users, access to advanced features, and analysis modules.",
+    "q3": "Is the app available for mobile?",
+    "a3": "Yes, Cafelab works perfectly from a mobile browser. The native app is under development.",
+    "q4": "How can I contact support?",
+    "a4": "You can write to us at contacto@cafemetrix.com or use the contact form.",
+    "seeMore": "See more..."
+  },
+  "contact": {
+    "title": "Contact us",
+    "name": "First name",
+    "lastname": "Last name",
+    "email": "Email",
+    "message": "Message",
+    "button": "Send",
+    "alert": "Thank you for your message! We will contact you soon."
+  },
+  "footer": {
+    "quickLinks": "Quick links",
+    "home": "Home",
+    "resources": "Resources",
+    "blog": "Blog",
+    "faq": "FAQ",
+    "support": "Support",
+    "contact": "Contact",
+    "phone": "Phone: 123-456-789",
+    "aboutUs": "About Us",
+    "aboutTeam": "About the Team",
+    "aboutProduct": "About the Product"
+  }
+} 

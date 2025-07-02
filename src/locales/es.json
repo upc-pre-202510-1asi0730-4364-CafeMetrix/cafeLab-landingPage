@@ -1,0 +1,110 @@
+{
+  "nav": {
+    "benefits": "Beneficios",
+    "plans": "Planes",
+    "contacts": "Contactos",
+    "login": "Iniciar sesión"
+  },
+  "language": "ES",
+  "hero": {
+    "title": "DOMINIO TOTAL SOBRE TU CAFÉ.",
+    "subtitle": "Descubre lo que Café Lab tiene para ofrecerte",
+    "register": "Quiero registrarme"
+  },
+  "benefits": {
+    "title": "Enfoque en <span class='underline'>beneficios claros</span>.",
+    "baristaTitle": "Soy barista",
+    "baristaText": "Documenta tus recetas, eleva tu técnica y construye un perfil sensorial único que defina tu estilo como profesional.",
+    "baristaCta": "Perfecciona tu arte.",
+    "baristaBtn": "Ver herramientas para baristas",
+    "ownerTitle": "Tengo una cafetería",
+    "ownerText": "Optimiza tu inventario, garantiza la trazabilidad de tus productos y profesionaliza cada aspecto de tu operación cafetera.",
+    "ownerCta": "Impulsa tu negocio.",
+    "ownerBtn": "Ver soluciones para negocios"
+  },
+  "data": {
+    "title": "Datos que respaldan tus decisiones.",
+    "subtitle": "Desde la curva hasta el inventario, Café Lab documenta cada paso.",
+    "dashboardTitle": "Dashboard de inventario",
+    "dashboardDesc": "Seguimiento de lotes en tiempo real, stock de granos, y control de movimientos.",
+    "curveTitle": "Curvas de tueste",
+    "curveDesc": "Control preciso del desarrollo del tueste para maximizar las cualidades sensoriales de cada origen."
+  },
+  "plans": {
+    "title": "Escala tu café con herramientas a tu medida.",
+    "barista": {
+      "title": "Plan Barista",
+      "price": "$/. 9",
+      "features": "Incluye sesiones de cata, biblioteca de defectos, correlación tueste-sabor, calibración de molienda y recetas.",
+      "button": "Empezar Plan Barista"
+    },
+    "owner": {
+      "title": "Plan Owner/Admin",
+      "price": "$/. 9",
+      "features": "Incluye gestión de proveedores, inventario, lotes de café, control de costos y perfiles de tueste.",
+      "button": "Empezar Plan Owner/Admin"
+    },
+    "full": {
+      "title": "Plan Full",
+      "price": "$/. 15",
+      "features": "Incluye todas las funciones de Barista y Owner/Admin.",
+      "button": "Empezar Plan Full"
+    },
+    "footer": "Todos nuestros planes incluyen documentación técnica, soporte personalizado y visualizaciones intuitivas para baristas y cafeterías."
+  },
+  "testimonials": {
+    "title": "Esto dicen los que ya usan Café Lab.",
+    "martin": {
+      "name": "Martin Gutierrez - Dueño de cafetería",
+      "text": "Gracias a CafeLab pude optimizar mis procesos mediante documentaciones intuitivas, lo que mejoró mis planificaciones."
+    },
+    "ana": {
+      "name": "Ana Rivera - Barista en Lima",
+      "text": "CafeLab me ayudó a estandarizar mis tuestes y reducir errores. Ahora todos en la cafetería usan la misma receta."
+    },
+    "rosa": {
+      "name": "Rosa Dominguez",
+      "stars": "⭐⭐⭐⭐⭐",
+      "text": "Útil, fácil de usar"
+    },
+    "miguel": {
+      "name": "Miguel Diaz",
+      "stars": "⭐⭐⭐⭐⭐",
+      "text": "Rentable"
+    }
+  },
+  "faq": {
+    "title": "Preguntas Frecuentes (FAQ)",
+    "q1": "¿Puedo usar Cafelab si solo soy barista y no tengo cafetería?",
+    "a1": "¡Claro! Cafelab se adapta tanto a baristas individuales como a cafeterías completas.",
+    "q2": "¿Qué diferencia hay entre los planes?",
+    "a2": "Los planes difieren en cantidad de usuarios, acceso a funciones avanzadas y módulos de análisis.",
+    "q3": "¿La app está disponible para móvil?",
+    "a3": "Sí, Cafelab funciona perfectamente desde navegador móvil. La app nativa está en desarrollo.",
+    "q4": "¿Cómo puedo contactar soporte?",
+    "a4": "Puedes escribirnos a contacto@cafemetrix.com o usar el formulario de contacto.",
+    "seeMore": "Ver más..."
+  },
+  "contact": {
+    "title": "Contáctanos",
+    "name": "Nombre",
+    "lastname": "Apellidos",
+    "email": "Correo electrónico",
+    "message": "Mensaje",
+    "button": "Enviar",
+    "alert": "¡Gracias por tu mensaje! Te contactaremos pronto."
+  },
+  "footer": {
+    "quickLinks": "Enlaces rápidos",
+    "home": "Inicio",
+    "resources": "Recursos",
+    "blog": "Blog",
+    "faq": "FAQ",
+    "support": "Soporte",
+    "contact": "Contacto",
+    "phone": "Teléfono: 123-456-789",
+    "aboutUs": "Sobre Nosotros",
+    "aboutTeam": "Sobre el equipo",
+    "aboutProduct": "Sobre el producto"
+  }
+} 

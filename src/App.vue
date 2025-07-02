@@ -1,6 +1,55 @@
 <script setup>
+import { useI18n } from 'vue-i18n'
+import { ref } from 'vue'
 import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
+
+const { t, locale } = useI18n()
+
+// URLs para call-to-action (reemplazar con las URLs reales)
+const registerUrl = 'https://coffeelab-a5cd7.web.app/login'
+const loginUrl = 'https://coffeelab-a5cd7.web.app/login'
+
+// FAQ items con estado reactivo
+const faqItems = ref(t('faq.items'))
+const openFaq = ref([false, false, false])
+const faqList = t('faq.items', { returnObjects: true })
+
+function toggleFaq(index) {
+  openFaq.value[index] = !openFaq.value[index]
+}
+
+// Formulario de contacto
+const contactForm = ref({
+  nombre: '',
+  apellidos: '',
+  email: '',
+  mensaje: ''
+})
+
+function handlePlanClick(planType) {
+  window.open(registerUrl, '_blank')
+}
+
+function handleContactSubmit() {
+  alert(t('contact.alert'))
+  contactForm.value = {
+    nombre: '',
+    apellidos: '',
+    email: '',
+    mensaje: ''
+  }
+}
+
+function switchLanguage() {
+  locale.value = locale.value === 'es' ? 'en' : 'es'
+  // Actualizar FAQ al cambiar idioma
+  faqItems.value = t('faq.items')
+}
+
+const baristaFeatures = t('plans.barista.features', { returnObjects: true })
+const ownerFeatures = t('plans.owner.features', { returnObjects: true })
+const fullFeatures = t('plans.full.features', { returnObjects: true })
 </script>
 
 <template>
@@ -13,23 +62,23 @@ import TheWelcome from './components/TheWelcome.vue'
         </div>
         <div class="nav-container">
           <nav class="nav">
-            <a href="#beneficios" class="nav-link primary">Beneficios</a>
-            <a href="#planes" class="nav-link primary">Planes</a>
-            <a href="#faq-contacto" class="nav-link primary">Contactos</a>
+            <a href="#beneficios" class="nav-link primary">{{ t('nav.benefits') }}</a>
+            <a href="#planes" class="nav-link primary">{{ t('nav.plans') }}</a>
+            <a href="#faq-contacto" class="nav-link primary">{{ t('nav.contacts') }}</a>
             <a :href="loginUrl" class="nav-link primary login" target="_blank">
               <svg class="login-icon icon-person" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
                 <circle cx="12" cy="7" r="4"/>
               </svg>
-              Iniciar sesión
+              {{ t('nav.login') }}
             </a>
           </nav>
-          <a href="#language" class="language-button primary">
-            ES
+          <button @click="switchLanguage" class="language-button primary">
+            {{ t('language') }}
             <svg class="language-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <polyline points="6 9 12 15 18 9"/>
             </svg>
-          </a>
+          </button>
         </div>
       </div>
     </header>
@@ -39,10 +88,10 @@ import TheWelcome from './components/TheWelcome.vue'
       <section class="hero">
         <div class="container">
           <div class="hero-content">
-            <h1 class="hero-title">DOMINIO TOTAL SOBRE TU CAFÉ.</h1>
+            <h1 class="hero-title" v-html="t('hero.title')"></h1>
             <div class="hero-right">
-              <p class="hero-subtitle">Descubre lo que Café Lab tiene para ofrecerte</p>
-              <a :href="registerUrl" class="hero-button primary" target="_blank">Quiero registrarme</a>
+              <p class="hero-subtitle">{{ t('hero.subtitle') }}</p>
+              <a :href="registerUrl" class="hero-button primary" target="_blank">{{ t('hero.register') }}</a>
             </div>
           </div>
         </div>
@@ -51,36 +100,34 @@ import TheWelcome from './components/TheWelcome.vue'
       <!-- Sección Beneficios -->
       <section id="beneficios" class="beneficios">
         <div class="container">
-          <h2 class="beneficios__title">
-            Enfoque en <span class="underline">beneficios claros</span>.
-          </h2>
+          <h2 class="beneficios__title" v-html="t('benefits.title')"></h2>
           <div class="beneficios__grid">
             <!-- Card Barista -->
             <div class="beneficio-card">
-              <h3 class="beneficio-card__heading">Soy barista</h3>
+              <h3 class="beneficio-card__heading">{{ t('benefits.baristaTitle') }}</h3>
               <p class="beneficio-card__text">
-                Documenta tus recetas, eleva tu técnica y construye un perfil sensorial único que defina tu estilo como profesional.
+                {{ t('benefits.baristaText') }}
               </p>
               <p class="beneficio-card__cta">
-                <span class="highlight">Perfecciona</span>
-                <span class="cta-rest">tu arte.</span>
+                <span class="highlight">{{ t('benefits.baristaCta').split(' ')[0] }}</span>
+                <span class="cta-rest">{{ t('benefits.baristaCta').split(' ').slice(1).join(' ') }}</span>
               </p>
               <a :href="registerUrl" class="btn-beneficios" target="_blank">
-                Ver herramientas para baristas
+                {{ t('benefits.baristaBtn') }}
               </a>
             </div>
             <!-- Card Cafetería -->
             <div class="beneficio-card">
-              <h3 class="beneficio-card__heading">Tengo una cafetería</h3>
+              <h3 class="beneficio-card__heading">{{ t('benefits.ownerTitle') }}</h3>
               <p class="beneficio-card__text">
-                Optimiza tu inventario, garantiza la trazabilidad de tus productos y profesionaliza cada aspecto de tu operación cafetera.
+                {{ t('benefits.ownerText') }}
               </p>
               <p class="beneficio-card__cta">
-                <span class="highlight">Impulsa</span>
-                <span class="cta-rest">tu negocio.</span>
+                <span class="highlight">{{ t('benefits.ownerCta').split(' ')[0] }}</span>
+                <span class="cta-rest">{{ t('benefits.ownerCta').split(' ').slice(1).join(' ') }}</span>
               </p>
               <a :href="registerUrl" class="btn-beneficios" target="_blank">
-                Ver soluciones para negocios
+                {{ t('benefits.ownerBtn') }}
               </a>
             </div>
           </div>
@@ -90,8 +137,8 @@ import TheWelcome from './components/TheWelcome.vue'
       <!-- Sección Datos que respaldan tus decisiones -->
       <section class="data-section">
         <div class="container">
-          <h2 class="data-title">Datos que respaldan tus decisiones.</h2>
-          <p class="data-subtitle">Desde la curva hasta el inventario, Café Lab documenta cada paso.</p>
+          <h2 class="data-title">{{ t('data.title') }}</h2>
+          <p class="data-subtitle">{{ t('data.subtitle') }}</p>
 
           <div class="data-features">
             <!-- Dashboard de inventario -->
@@ -102,9 +149,9 @@ import TheWelcome from './components/TheWelcome.vue'
                 </div>
               </div>
               <div class="feature-content">
-                <h3 class="feature-title">Dashboard de inventario</h3>
+                <h3 class="feature-title">{{ t('data.dashboardTitle') }}</h3>
                 <p class="feature-description">
-                  Seguimiento de lotes en tiempo real, stock de granos, y control de movimientos.
+                  {{ t('data.dashboardDesc') }}
                 </p>
               </div>
             </div>
@@ -117,9 +164,9 @@ import TheWelcome from './components/TheWelcome.vue'
                 </div>
               </div>
               <div class="feature-content">
-                <h3 class="feature-title">Curvas de tueste</h3>
+                <h3 class="feature-title">{{ t('data.curveTitle') }}</h3>
                 <p class="feature-description">
-                  Control preciso del desarrollo del tueste para maximizar las cualidades sensoriales de cada origen.
+                  {{ t('data.curveDesc') }}
                 </p>
               </div>
             </div>
@@ -130,108 +177,78 @@ import TheWelcome from './components/TheWelcome.vue'
       <!-- Planes y características -->
       <section id="planes" class="planes-cafetal">
         <div class="planes-cafetal__container">
-          <h2 class="planes-cafetal__title">Escala tu café con herramientas a tu medida.</h2>
-          
+          <h2 class="planes-cafetal__title">{{ t('plans.title') }}</h2>
+
           <div class="planes-cafetal__grid">
-            <!-- Plan 1 -->
+
+            <!-- Plan Barista -->
             <div class="planes-cafetal__plan">
-              <h3 class="planes-cafetal__plan-title">Plan Base Cafetal</h3>
+              <h3 class="planes-cafetal__plan-title">{{ t('plans.barista.title') }}</h3>
               <div class="planes-cafetal__card">
-                <div class="planes-cafetal__price">s/.19/mes</div>
-                <ul class="planes-cafetal__features">
-                  <li>✓ Registro básico de tuestes (manual).</li>
-                  <li>✓ Biblioteca de recetas y módulos.</li>
-                  <li>✓ Registro de defectos comunes.</li>
-                  <li>✓ Guía de almacenamiento y control simple de inventario.</li>
-                  <li>✓ Acceso desde móvil.</li>
-                </ul>
-                <button class="planes-cafetal__button" @click="handlePlanClick('base')">Conocer Plan Base Cafetal</button>
+                <div class="planes-cafetal__price">{{ t('plans.barista.price') }}</div>
+                <p class="planes-cafetal__features">{{ t('plans.barista.features') }}</p>
+                <button class="planes-cafetal__button" @click="handlePlanClick('barista')">{{ t('plans.barista.button') }}</button>
               </div>
             </div>
-            
-            <!-- Plan 2 -->
+
+            <!-- Plan Owner/Admin -->
             <div class="planes-cafetal__plan">
-              <h3 class="planes-cafetal__plan-title">Plan Técnico de Tueste</h3>
+              <h3 class="planes-cafetal__plan-title">{{ t('plans.owner.title') }}</h3>
               <div class="planes-cafetal__card">
-                <div class="planes-cafetal__price">s/.49/mes</div>
-                <ul class="planes-cafetal__features">
-                  <li>✓ Todo Plan Base Cafetal.</li>
-                  <li>✓ Costos automatizados y comparativo por lote.</li>
-                  <li>✓ Registro digital de tuestes con curvas personalizadas.</li>
-                  <li>✓ Calculadora de pérdida de peso y rendimiento.</li>
-                  <li>✓ Biblioteca extendida de perfiles y curvas por origen.</li>
-                </ul>
-                <button class="planes-cafetal__button" @click="handlePlanClick('tecnico')">Conocer Plan Técnico de Tueste</button>
+                <div class="planes-cafetal__price">{{ t('plans.owner.price') }}</div>
+                <p class="planes-cafetal__features">{{ t('plans.owner.features') }}</p>
+                <button class="planes-cafetal__button" @click="handlePlanClick('owner')">{{ t('plans.owner.button') }}</button>
               </div>
             </div>
-            
-            <!-- Plan 3 -->
+
+            <!-- Plan Full -->
             <div class="planes-cafetal__plan">
-              <h3 class="planes-cafetal__plan-title">Plan Artista del Tueste</h3>
+              <h3 class="planes-cafetal__plan-title">{{ t('plans.full.title') }}</h3>
               <div class="planes-cafetal__card">
-                <div class="planes-cafetal__price">s/.59/mes</div>
-                <ul class="planes-cafetal__features">
-                  <li>✓ Gestor de recetas personalizadas por método y bebida.</li>
-                  <li>✓ Calibrador de molinos y ratio.</li>
-                  <li>✓ Portafolio con notas por cliente, origen o evaluación.</li>
-                  <li>✓ Registro de extracciones y resultados.</li>
-                </ul>
-                <button class="planes-cafetal__button" @click="handlePlanClick('artista')">Conocer Plan Artista del Tueste</button>
+                <div class="planes-cafetal__price">{{ t('plans.full.price') }}</div>
+                <p class="planes-cafetal__features">{{ t('plans.full.features') }}</p>
+                <button class="planes-cafetal__button" @click="handlePlanClick('full')">{{ t('plans.full.button') }}</button>
               </div>
             </div>
-            
-            <!-- Plan 4 -->
-            <div class="planes-cafetal__plan">
-              <h3 class="planes-cafetal__plan-title">Plan D' Especialidad</h3>
-              <div class="planes-cafetal__card">
-                <div class="planes-cafetal__price">s/.81/mes</div>
-                <ul class="planes-cafetal__features">
-                  <li>✓ Control de inventario (verde y tostado).</li>
-                  <li>✓ Conectividad con sensores IoT (tostadoras).</li>
-                  <li>✓ Modelado y control sensorial.</li>
-                  <li>✓ Módulos de certificaciones y capacitaciones.</li>
-                </ul>
-                <button class="planes-cafetal__button" @click="handlePlanClick('especialidad')">Conocer Plan D' Especialidad</button>
-              </div>
-            </div>
+
           </div>
-          
+
           <div class="planes-cafetal__footer">
-            <p>Todos nuestros planes incluyen documentación técnica, soporte personalizado y visualizaciones intuitivas para baristas y cafeterías.</p>
+            <p>{{ t('plans.footer') }}</p>
           </div>
         </div>
       </section>
 
       <!-- Sección de Testimonios -->
       <section class="testimonios">
-        <h2>Esto dicen los que ya usan Café Lab.</h2>
+        <h2>{{ t('testimonials.title') }}</h2>
 
         <div class="testimonios-contenedor">
           <div class="testimonio">
             <img src="/Martin_guiterrez.jpg" alt="Martin Gutierrez" />
-            <h3>Martin Gutierrez - Dueño de cafetería</h3>
-            <p>"Gracias a CafeLab pude optimizar mis procesos mediante documentaciones intuitivas, lo que mejoró mis planificaciones."</p>
+            <h3>{{ t('testimonials.martin.name') }}</h3>
+            <p>{{ t('testimonials.martin.text') }}</p>
           </div>
 
           <div class="testimonio">
             <img src="/Ana_Rivera.jpg" alt="Ana Rivera" />
-            <h3>Ana Rivera - Barista en Lima</h3>
-            <p>"CafeLab me ayudó a estandarizar mis tuestes y reducir errores. Ahora todos en la cafetería usan la misma receta."</p>
+            <h3>{{ t('testimonials.ana.name') }}</h3>
+            <p>{{ t('testimonials.ana.text') }}</p>
           </div>
         </div>
 
         <div class="calificaciones">
           <div class="opinion">
             <img src="/Rosa.jpeg" alt="Rosa Dominguez" />
-            <h4>Rosa Dominguez</h4>
-            <p>⭐⭐⭐⭐⭐</p>
-            <span>"Útil, fácil de usar"</span>
+            <h4>{{ t('testimonials.rosa.name') }}</h4>
+            <p>{{ t('testimonials.rosa.stars') }}</p>
+            <span>"{{ t('testimonials.rosa.text') }}"</span>
           </div>
           <div class="opinion">
             <img src="/Miguel.jpeg" alt="Miguel Diaz" />
-            <h4>Miguel Diaz</h4>
-            <p>⭐⭐⭐⭐⭐</p>
-            <span>"Rentable"</span>
+            <h4>{{ t('testimonials.miguel.name') }}</h4>
+            <p>{{ t('testimonials.miguel.stars') }}</p>
+            <span>"{{ t('testimonials.miguel.text') }}"</span>
           </div>
         </div>
       </section>
@@ -241,31 +258,45 @@ import TheWelcome from './components/TheWelcome.vue'
         <div class="faq-contact-wrapper">
           <!-- Sección de Preguntas Frecuentes -->
           <div class="faq">
-            <h2 class="faq-title">Preguntas Frecuentes (FAQ)</h2>
-            <div class="faq-item" v-for="(item, index) in faqItems" :key="index">
-              <p class="question" @click="toggleFaq(index)">{{ item.question }}</p>
-              <p class="answer" v-show="item.isOpen">{{ item.answer }}</p>
-            </div>
-            <a href="#" class="ver-mas">Ver más...</a>
+            <h2 class="faq-title">{{ t('faq.title') }}</h2>
+            <ol class="faq-list">
+              <li class="faq-item">
+                <strong>{{ t('faq.q1') }}</strong>
+                <div class="faq-answer">{{ t('faq.a1') }}</div>
+              </li>
+              <li class="faq-item">
+                <strong>{{ t('faq.q2') }}</strong>
+                <div class="faq-answer">{{ t('faq.a2') }}</div>
+              </li>
+              <li class="faq-item">
+                <strong>{{ t('faq.q3') }}</strong>
+                <div class="faq-answer">{{ t('faq.a3') }}</div>
+              </li>
+              <li class="faq-item">
+                <strong>{{ t('faq.q4') }}</strong>
+                <div class="faq-answer">{{ t('faq.a4') }}</div>
+              </li>
+            </ol>
+            <a href="#" class="ver-mas">{{ t('faq.seeMore') }}</a>
           </div>
 
           <!-- Sección de Formulario de Contacto -->
           <div class="contact">
-            <h2 class="contact-title">Contáctanos</h2>
+            <h2 class="contact-title">{{ t('contact.title') }}</h2>
             <form @submit.prevent="handleContactSubmit">
-              <label for="nombre">Nombre</label>
+              <label for="nombre">{{ t('contact.name') }}</label>
               <input type="text" id="nombre" v-model="contactForm.nombre" required>
               
-              <label for="apellidos">Apellidos</label>
+              <label for="apellidos">{{ t('contact.lastname') }}</label>
               <input type="text" id="apellidos" v-model="contactForm.apellidos" required>
               
-              <label for="email">Correo electrónico</label>
+              <label for="email">{{ t('contact.email') }}</label>
               <input type="email" id="email" v-model="contactForm.email" required>
               
-              <label for="mensaje">Mensaje</label>
+              <label for="mensaje">{{ t('contact.message') }}</label>
               <textarea id="mensaje" v-model="contactForm.mensaje" rows="4" required></textarea>
               
-              <button type="submit">Enviar</button>
+              <button type="submit">{{ t('contact.button') }}</button>
             </form>
           </div>
         </div>
@@ -276,41 +307,41 @@ import TheWelcome from './components/TheWelcome.vue'
         <div class="container">
           <div class="footer-content">
             <div class="footer-section">
-              <h3>Enlaces rápidos</h3>
+              <h3>{{ t('footer.quickLinks') }}</h3>
               <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#beneficios">Beneficios</a></li>
-                <li><a href="#planes">Planes</a></li>
-                <li><a href="#faq-contacto">Contactos</a></li>
+                <li><a href="#">{{ t('footer.home') }}</a></li>
+                <li><a href="#beneficios">{{ t('nav.benefits') }}</a></li>
+                <li><a href="#planes">{{ t('nav.plans') }}</a></li>
+                <li><a href="#faq-contacto">{{ t('nav.contacts') }}</a></li>
               </ul>
             </div>
             <div class="footer-section">
-              <h3>Recursos</h3>
+              <h3>{{ t('footer.resources') }}</h3>
               <ul>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#faq-contacto">FAQ</a></li>
-                <li><a href="#">Soporte</a></li>
+                <li><a href="#">{{ t('footer.blog') }}</a></li>
+                <li><a href="#faq-contacto">{{ t('footer.faq') }}</a></li>
+                <li><a href="#">{{ t('footer.support') }}</a></li>
               </ul>
             </div>
             <div class="footer-section">
-              <h3>Contacto</h3>
+              <h3>{{ t('footer.contact') }}</h3>
               <ul>
                 <li><a href="mailto:contacto@cafemetrix.com">contacto@cafemetrix.com</a></li>
-                <li><a href="#">Teléfono: 123-456-789</a></li>
+                <li><a href="#">{{ t('footer.phone') }}</a></li>
               </ul>
             </div>
             <div class="footer-section">
-              <h3>Sobre Nosotros</h3>
+              <h3>{{ t('footer.aboutUs') }}</h3>
               <ul>
                 <li>
                   <a href="https://youtu.be/aaMsFIHMJBY" target="_blank" rel="noopener noreferrer">
-                    About the Team
+                    {{ t('footer.aboutTeam') }}
                     <img src="https://img.youtube.com/vi/aaMsFIHMJBY/hqdefault.jpg" alt="About the team video preview" class="video-preview-img">
                   </a>
                 </li>
                 <li>
                   <a href="https://youtu.be/Op5L0uSXScE" target="_blank" rel="noopener noreferrer">
-                    About the Product
+                    {{ t('footer.aboutProduct') }}
                     <img src="https://img.youtube.com/vi/Op5L0uSXScE/hqdefault.jpg" alt="About the product video preview" class="video-preview-img">
                   </a>
                 </li>
@@ -322,74 +353,6 @@ import TheWelcome from './components/TheWelcome.vue'
     </main>
   </div>
 </template>
-
-<script>
-export default {
-  name: 'App',
-  data() {
-    return {
-      // URLs para call-to-action (reemplazar con las URLs reales)
-      registerUrl: 'https://coffeelab-a5cd7.web.app/login', // Reemplazado
-      loginUrl: 'https://coffeelab-a5cd7.web.app/login', // Reemplazado
-      
-      // FAQ items con estado reactivo
-      faqItems: [
-        {
-          question: '¿Puedo usar Cafelab si solo soy barista y no tengo cafetería?',
-          answer: '¡Claro! Cafelab se adapta tanto a baristas individuales como a cafeterías completas.',
-          isOpen: false
-        },
-        {
-          question: '¿Qué diferencia hay entre los planes?',
-          answer: 'Los planes difieren en cantidad de usuarios, acceso a funciones avanzadas y módulos de análisis.',
-          isOpen: false
-        },
-        {
-          question: '¿La app está disponible para móvil?',
-          answer: 'Sí, Cafelab funciona perfectamente desde navegador móvil. La app nativa está en desarrollo.',
-          isOpen: false
-        }
-      ],
-      
-      // Formulario de contacto
-      contactForm: {
-        nombre: '',
-        apellidos: '',
-        email: '',
-        mensaje: ''
-      }
-    }
-  },
-  methods: {
-    // Manejar clic en planes
-    handlePlanClick(planType) {
-      console.log(`Plan seleccionado: ${planType}`);
-      // Aquí puedes agregar lógica para redirigir al registro con el plan específico
-      window.open(this.registerUrl, '_blank');
-    },
-    
-    // Toggle FAQ items
-    toggleFaq(index) {
-      this.faqItems[index].isOpen = !this.faqItems[index].isOpen;
-    },
-    
-    // Manejar envío del formulario de contacto
-    handleContactSubmit() {
-      console.log('Formulario enviado:', this.contactForm);
-      // Aquí puedes agregar lógica para enviar el formulario
-      alert('¡Gracias por tu mensaje! Te contactaremos pronto.');
-      
-      // Limpiar formulario
-      this.contactForm = {
-        nombre: '',
-        apellidos: '',
-        email: '',
-        mensaje: ''
-      };
-    }
-  }
-}
-</script>
 
 <style>
 /* Importar fuentes de Google */
